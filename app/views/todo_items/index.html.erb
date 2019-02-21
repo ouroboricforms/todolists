@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Things you want to do but you're stuck at Wyncode</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @todo_items.each do |todo_item| %>
+      <tr>
+        <td><%= todo_item.description %></td>
+        <td><%= link_to 'Show', todo_item %></td>
+        <td><%= link_to 'Edit', edit_todo_item_path(todo_item) %></td>
+        <td><%= link_to 'Destroy', todo_item, method: :delete, data: { confirm: 'I mean, if you really want to' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'I wish I was doing...', new_todo_item_path %>
